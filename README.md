@@ -8,8 +8,8 @@ Pharmacy Stock DB is a robust MERN stack application designed to efficiently man
 
 Technology Stack
 Frontend: React
-Backend: Node.js and Express.js
-Database: MongoDB
+Backend: Node.js/Lambda
+Database: DynamoDB
 Cloud Platform: AWS
 Deployment Process
 1. Development:
@@ -23,7 +23,7 @@ Unit and integration tests are executed.
 The React frontend is built and optimized.
 3. Deployment to Test Environment:
 
-The built application is deployed to an AWS environment (e.g., AWS Amplify or AWS Elastic Beanstalk).
+The built application is deployed to an AWS S3 bucket if it was a React change and a lambda update otherwise.
 The deployment is automatically triggered by the CI/CD pipeline.
 4. Manual Approval:
 
@@ -32,7 +32,7 @@ A Change Advisory Board (CAB) meeting is scheduled to review the changes.
 Upon approval from the CAB, the deployment proceeds to the production environment.
 5. Production Deployment:
 
-The approved changes are deployed to the production environment.
+The approved changes are deployed to the production environment only by a human.
 Monitoring and logging are set up to track application performance and errors.
 Deployment using AWS CDK
 1. Initialize a CDK Project:
